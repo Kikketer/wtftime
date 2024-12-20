@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -50,7 +50,13 @@
         <p class="sub-title">*the f is silent, but implied</p>
       </div>
       <form id="date-form">
-        <div>
+        <div id="local-date-input-container" class="hidden">
+          Local Time:
+          <label for="local-date-input">
+            <input type="datetime-local" id="local-date-input" />
+          </label>
+        </div>
+        <div id="date-input-container">
           <label for="date-input">Date (ISO 8601)</label>
           <input
             type="text"
@@ -75,10 +81,10 @@
             <option value="America/Puerto_Rico">
               America/Puerto_Rico (UTC-4)
             </option>
-            <option value="America/New_York">America/New_York (UTC-5)</option>
-            <option value="America/Chicago">America/Chicago (UTC-6)</option>
+            <option value="America/New_York">America/New_York (UTC-5/4)</option>
+            <option value="America/Chicago">America/Chicago (UTC-6/5)</option>
             <option value="America/Phoenix">America/Phoenix (UTC-7)</option>
-            <option value="America/Denver">America/Denver (UTC-7)</option>
+            <option value="America/Denver">America/Denver (UTC-7/6)</option>
             <option value="America/Los_Angeles">
               America/Los_Angeles (UTC-8)
             </option>
@@ -88,10 +94,13 @@
       </form>
 
       <div>
-        <p class="sub-heading">Their Time:</p>
-        <p class="result" id="local-time"></p>
+        <p>Their Time:</p>
+        <p class="result" id="result-date"></p>
+      </div>
+      <div class="button-container">
+        <button id="swap-mode">Swap Modes</button>
       </div>
     </div>
-    <script src="dist/bundle.js"></script>
+    <script defer src="dist/bundle.js"></script>
   </body>
 </html>
