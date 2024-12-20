@@ -30,17 +30,18 @@ function calculateIso() {
   const isoTimeElement = document.getElementById('result-date')
 
   try {
-    console.log(localTimeInput.value, timezoneInput.value)
     const localDateTime = new TZDate(localTimeInput.value + `:00.000Z`)
       .withTimeZone(timezoneInput.value)
       .toISOString()
-    isoTimeElement.textContent = format(new Date(localDateTime), "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")
+    isoTimeElement.textContent = format(
+      new Date(localDateTime),
+      "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+    )
     isoTimeElement.classList.remove('highlight-animation')
     // Trigger reflow to restart animation
     void isoTimeElement.offsetWidth
     isoTimeElement.classList.add('highlight-animation')
   } catch (err) {
-    console.error(err)
     isoTimeElement.textContent = '---'
   }
 }
@@ -78,8 +79,6 @@ function init() {
   dateInput.value = format(new Date(), "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")
   const localInput = document.getElementById('local-date-input')
   localInput.value = format(new Date(), "yyyy-MM-dd'T'HH:mm")
-
-  console.log('local', localInput.value)
 
   calculate()
 
