@@ -1,5 +1,6 @@
 import { format, parseISO } from 'date-fns'
 import { TZDate } from '@date-fns/tz'
+import '../styles.css'
 
 // Show local or show ISO:
 let currentMode = 'local'
