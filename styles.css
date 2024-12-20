@@ -85,6 +85,7 @@ button {
   appearance: none;
   -webkit-appearance: none;
   background-color: var(--container-bg);
+  cursor: pointer;
 }
 
 .container {
