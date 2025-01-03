@@ -4,7 +4,7 @@ import "../styles.css";
 import "./register-sw";
 
 // Show local or show ISO:
-let currentMode = "local";
+let currentMode = "iso";
 
 function calculateLocal() {
   const dateInput = document.getElementById("date-input");

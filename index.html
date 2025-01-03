@@ -61,14 +61,14 @@
         <p class="sub-title">*the f is silent, but implied</p>
       </div>
       <form id="date-form">
-        <div id="local-date-input-container" class="hidden">
+        <div id="local-date-input-container">
           Local Time:
           <label for="local-date-input">
             <input type="datetime-local" id="local-date-input" />
           </label>
         </div>
-        <div id="date-input-container">
-          <label for="date-input">Date (ISO 8601)</label>
+        <div id="date-input-container" class="hidden">
+          <label for="date-input">Date (ISO 8601):</label>
           <input
             type="text"
             id="date-input"
@@ -77,18 +77,25 @@
         </div>
 
         <div>
-          <label for="timezone-pick">Timezone</label>
+          <!-- https://en.wikipedia.org/wiki/List_of_tz_database_time_zones -->
+          <label for="timezone-pick">In Timezone:</label>
           <select name="timezone-pick" id="timezone-pick">
             <option value="UTC">UTC</option>
-            <option value="Pacific/Auckland">Pacific/Auckland (UTC+12)</option>
-            <option value="Australia/Sydney">Australia/Sydney (UTC+11)</option>
+            <option value="Pacific/Auckland">
+              Pacific/Auckland (UTC+13/12)
+            </option>
+            <option value="Pacific/Norfolk">Pacific/Norfolk (UTC+11/10)</option>
+            <option value="Australia/Sydney">
+              Australia/Sydney (UTC+11/10)
+            </option>
             <option value="Asia/Tokyo">Asia/Tokyo (UTC+9)</option>
             <option value="Asia/Shanghai">Asia/Shanghai (UTC+8)</option>
+            <option value="Asia/Dhaka">Asia/Dhaka (UTC+6)</option>
             <option value="Asia/Dubai">Asia/Dubai (UTC+4)</option>
             <option value="Europe/Moscow">Europe/Moscow (UTC+3)</option>
-            <option value="Europe/Berlin">Europe/Berlin (UTC+1)</option>
-            <option value="Europe/Paris">Europe/Paris (UTC+1)</option>
-            <option value="Europe/London">Europe/London (UTC+0)</option>
+            <option value="Europe/Berlin">Europe/Berlin (UTC+2/1)</option>
+            <option value="Europe/Paris">Europe/Paris (UTC+2/1)</option>
+            <option value="Europe/London">Europe/London (UTC+1/0)</option>
             <option value="America/Puerto_Rico">
               America/Puerto_Rico (UTC-4)
             </option>
@@ -97,7 +104,7 @@
             <option value="America/Phoenix">America/Phoenix (UTC-7)</option>
             <option value="America/Denver">America/Denver (UTC-7/6)</option>
             <option value="America/Los_Angeles">
-              America/Los_Angeles (UTC-8)
+              America/Los_Angeles (UTC-8/7)
             </option>
             <option value="America/Honolulu">America/Honolulu (UTC-10)</option>
           </select>
@@ -105,7 +112,7 @@
       </form>
 
       <div>
-        <p>Result:</p>
+        <p>Is:</p>
         <p class="result" id="result-date"></p>
       </div>
       <div class="button-container">
