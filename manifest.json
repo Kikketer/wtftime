@@ -29,6 +29,8 @@
     }
   ],
   "id": "zone.wtftime",
+  "dir": "ltr",
+  "lang": "en",
   "orientation": "portrait",
   "launch_handler": {
     "client_mode": ["focus-existing", "auto"]
