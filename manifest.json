@@ -31,7 +31,7 @@
   "app_id": "zone.wtftime",
   "orientation": "portrait",
   "launch_handler": {
-    "secure": true
+    "client_mode": ["focus-existing", "auto"]
   },
   "screenshots": [],
   "categories": ["utilities", "developer_tools"],
