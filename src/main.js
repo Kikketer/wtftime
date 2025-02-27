@@ -17,7 +17,7 @@ function calculateLocal() {
   try {
     const dateInTimezone = new TZDate(
       dateInput.value,
-      timezoneInput.value
+      timezoneInput.value,
     ).toISOString()
 
     localTimeElement.textContent = dateInTimezone
@@ -40,7 +40,7 @@ function calculateUTC() {
 
   try {
     const match = localTimeInput.value.match(
-      /(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})/
+      /(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})/,
     )
     const year = Number(match[1])
     const month = Number(match[2]) - 1
@@ -55,8 +55,8 @@ function calculateUTC() {
         day,
         hour,
         minute,
-        timezoneInput.value
-      ).toISOString()
+        timezoneInput.value,
+      ).toISOString(),
     ).toISOString()
     outputElement.textContent = dateInTimezone
     outputElement.classList.remove('highlight-animation')
@@ -71,8 +71,10 @@ function calculateUTC() {
 function calculate() {
   if (currentMode === 'local') {
     calculateLocal()
-  } else {
+  } else if (currentMode === 'utc') {
     calculateUTC()
+  } else {
+    calculateLocal()
   }
 }
 

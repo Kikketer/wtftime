@@ -70,10 +70,19 @@ label {
   color: var(--text-color);
 }
 
-form {
+#date-form {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+}
+
+#running-container {
+  width: max-content;
+  margin: auto;
+}
+
+#running-time {
+  font-family: monospace;
 }
 
 button {
