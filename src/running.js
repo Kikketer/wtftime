@@ -1,5 +1,4 @@
 import { format } from 'date-fns'
-import { TZDate } from '@date-fns/tz'
 import '../styles.css'
 import './register-sw'
 
